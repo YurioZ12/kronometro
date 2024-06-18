@@ -1,0 +1,98 @@
+[gd_scene load_steps=3 format=3 uid="uid://daq5slqheik56"]
+
+[ext_resource type="Script" path="res://main.tscn.gd" id="1_om30g"]
+[ext_resource type="Texture2D" uid="uid://dcnwuab7dcqbc" path="res://timmer/timer.png" id="2_oy6qe"]
+
+[node name="Main_tscn" type="CanvasLayer"]
+script = ExtResource("1_om30g")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(597.5, 349.5)
+scale = Vector2(0.380117, 0.405355)
+texture = ExtResource("2_oy6qe")
+
+[node name="MinButton" type="Button" parent="."]
+anchors_preset = -1
+anchor_left = 0.408
+anchor_top = 0.744
+anchor_right = 0.408
+anchor_bottom = 0.744
+offset_left = -33.516
+offset_top = -21.612
+offset_right = 34.484
+offset_bottom = 21.388
+theme_override_font_sizes/font_size = 25
+text = "M"
+
+[node name="SecButton" type="Button" parent="."]
+anchors_preset = -1
+anchor_left = 0.503
+anchor_top = 0.744
+anchor_right = 0.503
+anchor_bottom = 0.744
+offset_left = -32.9561
+offset_top = -25.612
+offset_right = 34.0439
+offset_bottom = 25.388
+text = "S"
+
+[node name="ModeButton" type="Button" parent="."]
+anchors_preset = -1
+anchor_left = 0.711
+anchor_top = 0.583
+anchor_right = 0.711
+anchor_bottom = 0.583
+offset_left = -28.572
+offset_top = -53.284
+offset_right = 28.428
+offset_bottom = 52.716
+text = "Mode"
+
+[node name="ClearButton" type="Button" parent="."]
+anchors_preset = -1
+anchor_left = 0.617
+anchor_top = 0.271
+anchor_right = 0.617
+anchor_bottom = 0.271
+offset_left = -58.2841
+offset_top = -22.108
+offset_right = 57.7159
+offset_bottom = 21.892
+text = "Clear"
+
+[node name="ModelLabel" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="StatusLabel" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="SetLabel" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="TimeLabel" type="Label" parent="."]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.464
+anchor_right = 0.5
+anchor_bottom = 0.464
+offset_left = -154.0
+offset_top = -58.672
+offset_right = 240.0
+offset_bottom = 78.328
+theme_override_font_sizes/font_size = 100
+text = "00:00"
+
+[node name="Clable" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="MainTimer" type="Timer" parent="."]
+
+[connection signal="pressed" from="MinButton" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="SecButton" to="." method="_on_sec_button_pressed"]
+[connection signal="pressed" from="ModeButton" to="." method="_on_mode_button_pressed"]
+[connection signal="pressed" from="ClearButton" to="." method="_on_clear_button_pressed"]
+[connection signal="timeout" from="MainTimer" to="." method="_on_main_timer_timeout"]
